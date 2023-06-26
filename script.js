@@ -44,7 +44,7 @@ function drawShape(canvas, text, height) {
   context.translate(0, height * 0.05);
   context.fillText(text, centerX, centerY);
 
-  var href = convertToImage(canvas, text, foreColor, backColor, width, height);
+  var href = convertToImage(canvas, shape, text, foreColor, backColor, width, height);
 
   if (shape === "circle") {
     const iconImageCollection = document.getElementById("icons");
@@ -56,13 +56,14 @@ function drawShape(canvas, text, height) {
   }
 }
 
-function convertToImage(canvas, fileText, foreColor, backColor, width, height) {
+function convertToImage(canvas, shape, fileText, foreColor, backColor, width, height) {
   var colorDict = {
     "#121822": "black",
     "#52e4c0": "mint",
     "#ee4cf7": "pink",
   };
-  var fileName = "rectangle_" + fileText + "_" + colorDict[foreColor] + "-on-" + colorDict[backColor] + "_" + height;
+
+  var fileName = shape + "_" + fileText + "_" + colorDict[foreColor] + "-on-" + colorDict[backColor] + "_" + height;
   var target = new Image();
   target.src = canvas.toDataURL("image/png");
   target.style.width = width;
