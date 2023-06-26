@@ -1,0 +1,29 @@
+* {
+  font-family: "Roboto";
+}
+
+h2 {
+  margin: 0px;
+}
+.black {
+  background-color: #121822;
+  color: white;
+  width: 650px;
+}
+.mint {
+  background: #52e4c0;
+  width: 650px;
+}
+.pink {
+  background: #ee4cf7;
+  margin-bottom: 20px;
+  width: 650px;
+}
+.input {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+.input input {
+  width: 120px;
+}
