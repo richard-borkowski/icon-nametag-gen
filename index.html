@@ -7,56 +7,63 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="rows">
-      <div>
-        <h1 class="rows">Steadforce CI Colors</h1>
+    <div class="center">
+      <div class="vertical">
+        <h1>Steadforce CI Colors</h1>
         <h2 class="black">#121822 - Schwarz-Blau</h2>
         <h2 class="mint">#52E4C0 - Mint</h2>
         <h2 class="pink">#EE4CF7 - Pink</h2>
-        <div>
-          <div class="input">
-            <label for="iconTextId">Initialen</label>
-            <input id="iconTextId" type="text" value="SF" oninput="draw(false)" maxlength="3" />
-          </div>
-
-          <div class="input">
-            <label for="nameTextId">Text</label>
-            <input id="nameTextId" type="text" value="Steadforce" oninput="draw(false)" />
-          </div>
-
-          <div class="input">
-            <label for="rangeId">Höhe</label>
-            <input type="number" min="10" max="1000" value="100" id="rangeId" step="10" oninput="draw(false)" />
-          </div>
-        </div>
-        <div style="margin-top: 20px; margin-bottom: 20px">
-          <label for="link">Direkt-Link</label>
-          <a href="" id="link">Link</a>
-        </div>
       </div>
-      <div style="display: none">
-        <!-- Circles -->
-        <canvas foreColor="#121822" backColor="#52e4c0" shape="circle"></canvas>
-        <canvas foreColor="#ee4cf7" backColor="#52e4c0" shape="circle"></canvas>
-        <canvas foreColor="#52e4c0" backColor="#121822" shape="circle"></canvas>
-        <canvas foreColor="#ee4cf7" backColor="#121822" shape="circle"></canvas>
-        <canvas foreColor="#121822" backColor="#ee4cf7" shape="circle"></canvas>
-        <canvas foreColor="#52e4c0" backColor="#ee4cf7" shape="circle"></canvas>
-
-        <!-- Rectangles -->
-        <canvas foreColor="#121822" backColor="#52e4c0" shape="rectangle"></canvas>
-        <canvas foreColor="#ee4cf7" backColor="#52e4c0" shape="rectangle"></canvas>
-        <canvas foreColor="#52e4c0" backColor="#121822" shape="rectangle"></canvas>
-        <canvas foreColor="#ee4cf7" backColor="#121822" shape="rectangle"></canvas>
-        <canvas foreColor="#121822" backColor="#ee4cf7" shape="rectangle"></canvas>
-        <canvas foreColor="#52e4c0" backColor="#ee4cf7" shape="rectangle"></canvas>
-      </div>
-
-      <!-- Images -->
     </div>
-    <div id="icons" class="rows"></div>
-    <div id="icons" class="rows">
-      <div id="nametags" class="columns"></div>
+
+    <!-- <div> -->
+    <div class="center">
+      <div class="vertical">
+        <div class="input">
+          <label for="iconTextId">Initialen</label>
+          <input id="iconTextId" type="text" value="SF" oninput="draw(false)" maxlength="3" />
+        </div>
+
+        <div class="input">
+          <label for="nameTextId">Text</label>
+          <input id="nameTextId" type="text" value="Steadforce" oninput="draw(false)" />
+        </div>
+
+        <div class="input">
+          <label for="rangeId">Höhe</label>
+          <input type="number" min="10" max="1000" value="100" id="rangeId" step="10" oninput="draw(false)" />
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+    <div class="center" style="margin-top: 20px; margin-bottom: 20px">
+      <label for="link">Direkt-Link</label>
+      <a href="" id="link">Link</a>
+    </div>
+    <!-- </div> -->
+    <div style="display: none">
+      <!-- Circles -->
+      <canvas foreColor="#121822" backColor="#52e4c0" shape="circle"></canvas>
+      <canvas foreColor="#ee4cf7" backColor="#52e4c0" shape="circle"></canvas>
+      <canvas foreColor="#52e4c0" backColor="#121822" shape="circle"></canvas>
+      <canvas foreColor="#ee4cf7" backColor="#121822" shape="circle"></canvas>
+      <canvas foreColor="#121822" backColor="#ee4cf7" shape="circle"></canvas>
+      <canvas foreColor="#52e4c0" backColor="#ee4cf7" shape="circle"></canvas>
+
+      <!-- Rectangles -->
+      <canvas foreColor="#121822" backColor="#52e4c0" shape="rectangle"></canvas>
+      <canvas foreColor="#ee4cf7" backColor="#52e4c0" shape="rectangle"></canvas>
+      <canvas foreColor="#52e4c0" backColor="#121822" shape="rectangle"></canvas>
+      <canvas foreColor="#ee4cf7" backColor="#121822" shape="rectangle"></canvas>
+      <canvas foreColor="#121822" backColor="#ee4cf7" shape="rectangle"></canvas>
+      <canvas foreColor="#52e4c0" backColor="#ee4cf7" shape="rectangle"></canvas>
+    </div>
+
+    <!-- Images -->
+    <!-- </div> -->
+    <div id="icons" class="center"></div>
+    <div class="center">
+      <div id="nametags" class="vertical"></div>
     </div>
 
     <!-- Script -->

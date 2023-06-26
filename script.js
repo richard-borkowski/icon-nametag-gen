@@ -67,11 +67,11 @@ function convertToImage(canvas, fileText, foreColor, backColor, width, height) {
   target.src = canvas.toDataURL("image/png");
   target.style.width = width;
   target.style.height = height;
-  target.style.margin = "4px";
+  // target.style.margin = "4px";
 
   var href = document.createElement("a");
-
   href.title = "Save as..";
+
   // make the filename file-safe
   href.download = fileName.replace(/[^a-z0-9]/gi, "_").toLowerCase() + ".png";
   href.href = target.src;

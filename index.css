@@ -4,16 +4,17 @@
   font-family: "Roboto";
 }
 
-.columns {
+.vertical {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 10px;
 }
 
-.rows {
+.center {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  gap: 10px;
 }
 
 h2 {
@@ -22,16 +23,12 @@ h2 {
 .black {
   background-color: #121822;
   color: white;
-  width: 650px;
 }
 .mint {
   background: #52e4c0;
-  width: 650px;
 }
 .pink {
   background: #ee4cf7;
-  margin-bottom: 20px;
-  width: 650px;
 }
 .input {
   display: flex;
