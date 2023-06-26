@@ -41,13 +41,19 @@ function drawShape(canvas, text, height) {
   context.fillStyle = foreColor;
 
   // Roboto Baseline is not "centered"
-  context.translate(0, height * 0.03);
+  context.translate(0, height * 0.05);
   context.fillText(text, centerX, centerY);
 
   var href = convertToImage(canvas, text, foreColor, backColor, width, height);
 
-  const imageCollection = document.getElementById("imageCollection");
-  imageCollection.appendChild(href);
+  if (shape === "circle") {
+    const iconImageCollection = document.getElementById("icons");
+    iconImageCollection.appendChild(href);
+  }
+  if (shape === "rectangle") {
+    const nametageImageCollection = document.getElementById("nametags");
+    nametageImageCollection.appendChild(href);
+  }
 }
 
 function convertToImage(canvas, fileText, foreColor, backColor, width, height) {
@@ -103,7 +109,8 @@ function draw(fromUrl) {
     }
   }
 
-  document.getElementById("imageCollection").innerHTML = "";
+  document.getElementById("icons").innerHTML = "";
+  document.getElementById("nametags").innerHTML = "";
 
   const allCanvas = document.getElementsByTagName("canvas");
   Array.from(allCanvas).forEach((canvas) => {
@@ -116,11 +123,9 @@ function draw(fromUrl) {
   });
 
   // update url
-  var linkText = "";
-  linkText = window.location.origin + window.location.pathname + "?text=" + nameText + "&initials=" + iconText + "&height=" + height;
+  const linkText = window.location.origin + window.location.pathname + "?text=" + nameText + "&initials=" + iconText + "&height=" + height;
   console.log(linkText);
   var linkElement = document.getElementById("link");
-  linkElement.innerHTML = "";
   linkElement.innerHTML = linkText;
   linkElement.setAttribute("href", linkText);
 }

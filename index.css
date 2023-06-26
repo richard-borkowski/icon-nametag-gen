@@ -4,6 +4,18 @@
   font-family: "Roboto";
 }
 
+.columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 h2 {
   margin: 0px;
 }
