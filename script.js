@@ -116,8 +116,11 @@ function draw(fromUrl) {
   });
 
   // update url
-  var linkText = window.location.origin + "?text=" + nameText + "&initials=" + iconText + "&height=" + height;
+  var linkText = "";
+  linkText = window.location.origin + window.location.pathname + "?text=" + nameText + "&initials=" + iconText + "&height=" + height;
+  console.log(linkText);
   var linkElement = document.getElementById("link");
+  linkElement.innerHTML = "";
   linkElement.innerHTML = linkText;
   linkElement.setAttribute("href", linkText);
 }
