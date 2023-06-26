@@ -124,7 +124,6 @@ function draw(fromUrl) {
 
   // update url
   const linkText = window.location.origin + window.location.pathname + "?text=" + nameText + "&initials=" + iconText + "&height=" + height;
-  console.log(linkText);
   var linkElement = document.getElementById("link");
   linkElement.innerHTML = linkText;
   linkElement.setAttribute("href", linkText);
