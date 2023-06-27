@@ -6,22 +6,21 @@ function drawShape(canvas, text, height) {
 
   const font = "bold " + height / 2 + "px Roboto";
 
-  if (shape === "circle") {
-    var width = height;
-  }
+  let width = height;
+
   if (shape === "rectangle") {
     context.font = font;
-    var textWidth = Math.max(context.measureText(text).width, 1);
-    var margin = textWidth * 0.5;
+    const textWidth = Math.max(context.measureText(text).width, 1);
+    const margin = textWidth * 0.5;
     //   var width = textWidth + height * 0.7;
-    var width = textWidth + margin;
+    width = textWidth + margin;
   }
 
   canvas.setAttribute("width", width);
   canvas.setAttribute("height", height);
 
-  var centerX = width / 2;
-  var centerY = height / 2;
+  const centerX = width / 2;
+  const centerY = height / 2;
 
   context.beginPath();
 
@@ -44,7 +43,7 @@ function drawShape(canvas, text, height) {
   context.translate(0, height * 0.05);
   context.fillText(text, centerX, centerY);
 
-  var href = convertToImage(canvas, shape, text, foreColor, backColor, width, height);
+  const href = convertToImage(canvas, shape, text, foreColor, backColor, width, height);
 
   if (shape === "circle") {
     const iconImageCollection = document.getElementById("icons");
@@ -57,20 +56,20 @@ function drawShape(canvas, text, height) {
 }
 
 function convertToImage(canvas, shape, fileText, foreColor, backColor, width, height) {
-  var colorDict = {
+  const colorDict = {
     "#121822": "black",
     "#52e4c0": "mint",
     "#ee4cf7": "pink",
   };
 
-  var fileName = shape + "_" + fileText + "_" + colorDict[foreColor] + "-on-" + colorDict[backColor] + "_" + height;
-  var target = new Image();
+  const fileName = shape + "_" + fileText + "_" + colorDict[foreColor] + "-on-" + colorDict[backColor] + "_" + height;
+  const target = new Image();
   target.src = canvas.toDataURL("image/png");
   target.style.width = width;
   target.style.height = height;
   // target.style.margin = "4px";
 
-  var href = document.createElement("a");
+  const href = document.createElement("a");
   href.title = "Save as..";
 
   // make the filename file-safe
@@ -85,9 +84,9 @@ function draw(fromUrl) {
   const iconTextElement = document.getElementById("iconTextId");
   const nameTagElement = document.getElementById("nameTextId");
 
-  var height = rangeElement.value;
-  var iconText = iconTextElement.value;
-  var nameText = nameTagElement.value;
+  let height = rangeElement.value;
+  let iconText = iconTextElement.value;
+  let nameText = nameTagElement.value;
   if (fromUrl) {
     const urlParams = new URL(window.location.toLocaleString()).searchParams;
 
@@ -125,7 +124,7 @@ function draw(fromUrl) {
 
   // update url
   const linkText = window.location.origin + window.location.pathname + "?text=" + nameText + "&initials=" + iconText + "&height=" + height;
-  var linkElement = document.getElementById("link");
+  const linkElement = document.getElementById("link");
   linkElement.innerHTML = linkText;
   linkElement.setAttribute("href", linkText);
 }
